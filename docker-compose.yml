@@ -1,0 +1,12 @@
+services:
+  web_term_project:
+    build: .
+    environment:
+      - WATCHPACK_POLLING=true
+    volumes:
+      - /usr/src/app/node_modules
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    restart: always

@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import SignUp from './components/member/SignUp.js';
+import SignIn from './components/member/SignIn.js';
+import MemberInfo from './components/MemberInfo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+    return (
+      <Router>
+        <div>
+          <h1>JWT Authentication App</h1>
+          <Routes>
+            <Route path="/" element={<SignUp />} />
+            <Route path="/signIn" element={<SignIn />} />
+            <Route path="/memberInfo" element={<MemberInfo />} />
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
+  
+  export default App;
